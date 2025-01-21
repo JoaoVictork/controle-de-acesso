@@ -12,4 +12,7 @@ public class UsuarioService {
     public Usuario salvar(Usuario usuario){
         return usuarioRepository.save(usuario);
     }
+    public Usuario obter(){
+        return usuarioRepository.consultarUsuarios(usuarioRepository);
+    }
 }
