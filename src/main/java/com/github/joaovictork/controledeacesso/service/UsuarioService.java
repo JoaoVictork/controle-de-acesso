@@ -5,6 +5,8 @@ import com.github.joaovictork.controledeacesso.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
     @Autowired
@@ -12,7 +14,7 @@ public class UsuarioService {
     public Usuario salvar(Usuario usuario){
         return usuarioRepository.save(usuario);
     }
-    public Usuario obter(){
-        return usuarioRepository.consultarUsuarios(usuarioRepository);
+    public List<Usuario> consultar(String nome, String email){
+        return usuarioRepository.consultarUsuarios(nome, email);
     }
 }

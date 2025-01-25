@@ -12,6 +12,7 @@ import java.util.List;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     //nativeQuery = true significa a tabela de usuario está sendo referenciada diretamente do banco de dados
-    @Query(value = "SELECT * FROM TB_USUARIO WHERE NOME LIKE %:nome% AND EMAIL LIKE %:email%", nativeQuery = true)
+    @Query(value = "SELECT * FROM TB_USUARIO WHERE NOME LIKE %:nome% AND EMAIL LIKE %:email%",
+            nativeQuery = true)
     List<Usuario> consultarUsuarios(@Param("nome") String nome, @Param("email") String email);
 }

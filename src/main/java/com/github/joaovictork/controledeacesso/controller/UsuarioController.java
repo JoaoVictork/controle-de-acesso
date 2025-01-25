@@ -17,8 +17,7 @@ public class UsuarioController {
 
     @GetMapping
     public List<Usuario> consultar(@RequestParam String nome, @RequestParam String email){
-        usuarioService.obter()
-        return ;
+        return usuarioService.consultar(nome, email);
     }
 
     @PostMapping ("/salvar")
